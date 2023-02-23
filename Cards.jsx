@@ -20,3 +20,20 @@ export default function Cards(props) {
                     </options>
                  
 <ul className="navbar-nav me-auto mb-2"> //shifting login and signup button on right side
+  -------------------------------------------------------------------------------------------
+  {(localStorage.getItem("auth"))?
+        <li className="nav-item">
+        <Link className="nav-link active fs-5" aria-current="page" to="/">My Orders</Link>
+        </li>
+
+        :""} //when authtoken exist then show the login page
+    -------------------------------------------------------------------------------------------    
+        
+        const handleLogout =()=>{
+    localStorage.removeItem("authToken");
+    navigate("/login");
+
+  }
+        <div className='btn bg-white text-success mx-2' onClick={handleLogout}>
+          Logout </div>  //performing logout when click on this button
+------------------------------------------------------------------------------------------------
