@@ -37,3 +37,9 @@ export default function Cards(props) {
         <div className='btn bg-white text-success mx-2' onClick={handleLogout}>
           Logout </div>  //performing logout when click on this button
 ------------------------------------------------------------------------------------------------
+ let finalPrice = qty* parseInt(options[size]); //final price of the products
+useEffect(()=>{
+  setSize(priceRef.current.value)
+},[])  //dispalying price of item
+
+<select className="m-2 h-100  bg-secondary rounded" ref={priceRef} onChange={(e)=>setSize(e.target.value)}>
